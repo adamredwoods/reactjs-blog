@@ -11,12 +11,12 @@ class Post extends Component {
         <header className="App-header">
           <h1>{this.props.post.title}</h1>
         </header>
-        <div>by <Author names={this.props.allAuthors} /></div>
+        <div><Author names={this.props.allAuthors} /></div>
         <p className="App-intro">
           {this.props.post.body}
         </p>
         <div>
-        Comments: {this.props.post.comments[0]}
+        Comments: {this.props.post.comments[1]}
         </div>
       </div>
     );
@@ -30,7 +30,7 @@ class Post extends Component {
 class Author extends Component{
    render() {
       return (
-         <div >...Written by {this.props.names}</div>
+         <div >...{this.props.names.map(author => <div>Written by {author}</div>)}</div>
       );
    }
 }
